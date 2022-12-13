@@ -1,0 +1,12 @@
+[Unit]
+Description = Patrol program
+After = rc-local.service
+
+[Service]
+ExecStart = /usr/local/bin/patrol.py
+Restart = always
+Type = simple
+
+[Install]
+WantedBy = multi-user.target
+
