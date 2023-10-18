@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# KiCAD
+KiCAD/patrol/patrol-backups/*
+*.zip
