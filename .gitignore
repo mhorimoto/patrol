@@ -129,5 +129,5 @@ dmypy.json
 .pyre/
 
 # KiCAD
-KiCAD/patrol/patrol-backups/*
+KiCAD/M916/M916-backups/*
 *.zip

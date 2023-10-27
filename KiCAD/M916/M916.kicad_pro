@@ -247,7 +247,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "patrol.kicad_pro",
+    "filename": "M916.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -324,7 +324,7 @@
   },
   "sheets": [
     [
-      "7d35782a-827b-46fb-bd7f-df16e81ab2b3",
+      "bef31b34-e3fa-4596-b7c9-774b270f7a16",
       ""
     ]
   ],
