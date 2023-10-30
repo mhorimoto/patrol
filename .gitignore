@@ -131,3 +131,4 @@ dmypy.json
 # KiCAD
 KiCAD/M916/M916-backups/*
 *.zip
+fp-info-cache
