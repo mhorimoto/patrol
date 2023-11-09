@@ -2,9 +2,12 @@
 
 装置見守りシステム
 
-V1.00
+V2.00
 
 # ドア開閉検知と停電検知
+
+LEDの点灯により異常検知の表示をおこなう。
+このため、フィールドでの簡単な検査が可能となった。
 
 ## ドア開閉検知
 
@@ -34,4 +37,14 @@ D-LinkのDGSシリーズに接続するので、3.3Vから5Vへの電圧変換�
 # API
 
 サーバー側に置くWeb APIのプログラム
+
+# 必要なライブラリ
+
+GPIOを用いるため、pyA20を必要とする。
+
+https://github.com/duxingkei33/orangepi_PC_gpio_pyH3.git
+
+これをコンパイルするために、python3.x-dev が必要となる。
+
+    apt install python3.8-dev
 

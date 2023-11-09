@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
+# Version 2.00
 import time
 import urllib.parse
 import urllib.request
@@ -34,14 +35,20 @@ gpio.setcfg(port.PG8,gpio.INPUT)
 gpio.pullup(port.PG8, gpio.PULLUP)
 gpio.setcfg(port.PA7,gpio.INPUT)
 gpio.pullup(port.PA7, gpio.PULLUP)
+gpio.setcfg(port.PA8, gpio.OUTPUT)  ## DOOR LED
+gpio.setcfg(port.PA9, gpio.OUTPUT)  ## POWER CHECK LED
+gpio.output(port.PA8, gpio.HIGH)
+gpio.output(port.PA9, gpio.HIGH)
 while True:
     if (pg8c>=5):
         pg8c = 0
     pa7v = gpio.input(port.PA7)
     pg8v = gpio.input(port.PG8)
     if (pg8v==0):
+        gpio.output(port.PA9, gpio.LOW)
         pg8c = 0
     else:
+        gpio.output(port.PA9, gpio.HIGH)
         pg8c += pg8v
     if pg8c==0:
         if (ppg8c!=2):
@@ -55,10 +62,12 @@ while True:
             send_trig(myname,toserv,"PR")
     if (ppa7c!=1) and (pa7v==0):
         ppa7c = 1
+        gpio.output(port.PA8, gpio.HIGH)
         print("Door close")
         send_trig(myname,toserv,"DC")
     if (ppa7c!=2) and (pa7v==1):
         ppa7c = 2
+        gpio.output(port.PA8, gpio.LOW)
         print("Door Open")
         send_trig(myname,toserv,"DO")
     time.sleep(1)
